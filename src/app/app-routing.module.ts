@@ -5,8 +5,7 @@ import { MenuComponent } from './componentes/menu/menu.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 
 const routes: Routes = [
-  {path: '', component: PrincipalComponent},
-  {path: 'educacion', component: EducacionComponent}
+  
 ];
 
 @NgModule({
