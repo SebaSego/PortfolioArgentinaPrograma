@@ -6,17 +6,27 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
+import { ExperienciaComponent } from './experiencia/experiencia.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
+import { InicioSesionComponent } from './componentes/inicio-sesion/inicio-sesion.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     PrincipalComponent,
-    EducacionComponent
+    EducacionComponent,
+    ExperienciaComponent,
+    PortfolioComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

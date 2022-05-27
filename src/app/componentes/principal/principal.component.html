@@ -10,8 +10,9 @@
         <div class="card-body text-center text-md-start"> 
           <!--Foto de perfil-->
           <div>
-            <img src="https://media-exp1.licdn.com/dms/image/C4E03AQGbuPKeC92O8g/profile-displayphoto-shrink_200_200/0/1627482338380?e=1651708800&v=beta&t=1EGZIVNNNd63xEs0Qy9EInmk0Wet4vV3Nu0qnPGZk40" 
-            class="rounded-pill border border-2 position-relative top-0 start-50 translate-middle" alt="Foto personal">
+
+            <img widht="200" [src]="miPortfolio.foto" 
+            class="rounded-pill border border-2 position-relative top-0 start-50 translate-middle" height="200" alt="Foto personal">
 
             <!--Boton para editar-->
             <button type="button" class="btn">
@@ -24,8 +25,8 @@
           </div>
           
           <div class="col-12 d-flex flex-column ">
-            <h3 class="card-title">Sebastian Segovia</h3>
-            <h6 class="card-text">Full Stack Developer Jr.</h6>
+            <h3 class="card-title">{{miPortfolio.nombre}}</h3>
+            <h6 class="card-text">{{miPortfolio.posicion}}</h6>
     
               
           </div>
@@ -39,18 +40,18 @@
         <div class="d-flex flex-column justify-content-evenly">
           <span>
             <a href="#" class="text-decoration-none text-dark">
-              <img src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/favicon/1648503444/favicon.ico" 
+              <img [src]="miPortfolio.estudios[1].logo" 
                style="max-width:50px" alt="Logo argentina programa">
-              <h6 >Argentina Programa</h6>
+              <h6 >{{miPortfolio.estudios[1].institucion}}</h6>
             </a>
             
           </span>
           
           <span>
             <a href="#" class="text-decoration-none text-dark">
-              <img src="https://acceso.ispc.edu.ar/pluginfile.php/1/tool_tenant/favicon/81/favicon-96x96.png" 
+              <img [src]="miPortfolio.estudios[0].logo" 
                style="max-width: 50px;" alt="">
-              <h6 >Tecnicatura Superior en Desarrollo Web</h6>
+              <h6 >{{miPortfolio.estudios[0].institucion}}</h6>
             </a>
             
           </span>
