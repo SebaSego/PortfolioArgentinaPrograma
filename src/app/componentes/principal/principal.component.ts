@@ -13,9 +13,15 @@ export class PrincipalComponent implements OnInit {
   constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data=>{
+    //this.datosPortfolio.obtenerDatos().subscribe(data=>{
+     // this.miPortfolio= data;
+    //});
+    this.datosPortfolio.getPersona().subscribe(data =>{
       this.miPortfolio= data;
+      console.log(this.miPortfolio);
+      
     });
+    
   }
 
 }
