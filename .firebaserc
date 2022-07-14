@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "portfolio-argentina-prog-4d15d"
+  },
+  "targets": {
+    "portfolio-argentina-prog-4d15d": {
+      "hosting": {
+        "ProyectoFinal": [
+          "portfolio-argentina-prog-4d15d"
+        ]
+      }
+    }
   }
 }

@@ -101,6 +101,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "ProyectoFinal:build:production",
+            "firebaseProject": "portfolio-argentina-prog-4d15d",
+            "firebaseHostingSite": "portfolio-argentina-prog-4d15d"
+          }
         }
       }
     }

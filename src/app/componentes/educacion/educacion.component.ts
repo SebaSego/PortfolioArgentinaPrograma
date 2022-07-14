@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Educacion } from 'src/app/models/educacion';
-import { EducacionServiceService } from 'src/app/servicios/educacion-service.service';
+import { EducacionServiceService } from 'src/app/servicios/educacionService/educacion-service.service';
 
 
 @Component({
