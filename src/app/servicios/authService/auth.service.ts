@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Usuario } from 'src/app/models/Usuario';
+import { Usuario } from 'src/app/models/usuario';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -9,7 +9,8 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  private apiServerUrl=environment.apiBaseUrl
+  private apiServerUrl=environment.apiBaseUrl;
+  logueado : boolean = false;
   
   constructor(private http:HttpClient) { }
 

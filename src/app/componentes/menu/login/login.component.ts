@@ -12,11 +12,10 @@ export class LoginComponent implements OnInit {
   form : FormGroup;
   usuarioDB : any;
   cargando : boolean = true;
-  logueado : boolean = false;
   datosCorrectos : boolean = true;
   textoError : string ='';
 
-  constructor(private formBuidler: FormBuilder, private autentic:AuthService) { 
+  constructor(private formBuidler: FormBuilder, public autentic:AuthService) { 
    
     /*Validaciones de Formulario*/
     this.form=this.formBuidler.group(
@@ -67,7 +66,8 @@ export class LoginComponent implements OnInit {
         
             else{ 
               this.datosCorrectos = true;
-              this.logueado = true;
+              this.autentic.logueado = true;
+              
               
             }
         }

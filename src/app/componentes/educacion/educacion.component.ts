@@ -3,9 +3,10 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { Educacion } from 'src/app/models/educacion';
+import { AuthService } from 'src/app/servicios/authService/auth.service';
 import { EducacionServiceService } from 'src/app/servicios/educacionService/educacion-service.service';
+
 
 
 @Component({
@@ -18,9 +19,9 @@ export class EducacionComponent implements OnInit {
   public altaEducacion : FormGroup | any;
   private eduModificar: Educacion | undefined;
   public esNuevo :boolean = true;
+  
 
-
-  constructor(private educacionService:EducacionServiceService, private formBuilder : FormBuilder) { }
+  constructor(private educacionService:EducacionServiceService, private formBuilder : FormBuilder, public autentic : AuthService ) { }
   
   ngOnInit(): void {
     this.mostrarEducacion();
@@ -32,7 +33,7 @@ export class EducacionComponent implements OnInit {
     public mostrarEducacion(){
       this.educacionService.getEducacion().subscribe(
         data =>{this.listaEducacion=data
-        console.log(this.listaEducacion)
+        
       });
     }
     
