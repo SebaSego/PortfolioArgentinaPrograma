@@ -1,0 +1,64 @@
+<div class="">
+
+  <div *ngIf="logueado && !cargando ; else showLogin">
+    <h1>Hello {{ usuarioDB.usuario }}!</h1>
+    
+  </div>
+  <ng-template #showLogin >
+    <div *ngIf = "cargando" class="text-center">
+      <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    
+    <h5 class="text-center">Ingrese su e-mail y Contraseña</h5>
+
+    
+    <!--Formulario de LOGIN-->
+    <div class="container ">
+
+      <form [formGroup]="form">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            
+            <div *ngIf="Email?.errors && Email?.touched">
+              <div class="alert alert-danger" role="alert" *ngIf="Email?.hasError('required')">
+                Debe ingresar un email
+              </div>
+              <div class="alert alert-danger" role="alert" *ngIf="Email?.hasError('email')">
+                Ingrese un formato de email válido
+              </div>
+            </div>
+            
+        
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" formControlName="password" (keyUp.enter)="validar()" class="form-control" id="password">
+          
+          <div *ngIf="Password?.errors && Password?.touched">
+            <div class="alert alert-danger" role="alert" *ngIf="Password?.hasError('required')">
+              Ingrese su contraseña
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="Password?.hasError('minlength')">
+              La contraseña debe contener al menos 8 caracteres
+            </div>
+          </div>
+          
+        </div>
+        <div class="text-center">
+          <button [disabled]="!form.valid" type="submit" class="btn btn-primary" (click)="validar()">Ingresar</button>
+
+        </div>
+      </form>
+
+      <div *ngIf="!datosCorrectos" class="alert alert-warning" role="alert">
+        {{textoError}}
+      </div>
+      
+    </div>
+  </ng-template>
+
+</div>
+
+
+

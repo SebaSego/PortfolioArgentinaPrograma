@@ -8,9 +8,8 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
-import { InicioSesionComponent } from './componentes/inicio-sesion/inicio-sesion.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './componentes/login/login.component';
+import { LoginComponent } from './componentes/menu/login/login.component';
 
 
 
@@ -23,7 +22,6 @@ import { LoginComponent } from './componentes/login/login.component';
     EducacionComponent,
     ExperienciaComponent,
     PortfolioComponent,
-    InicioSesionComponent,
     LoginComponent
   ],
   imports: [
