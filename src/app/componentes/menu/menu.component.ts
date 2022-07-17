@@ -17,4 +17,7 @@ export class MenuComponent implements OnInit {
     this.autentic.logueado = false;
   }
 
+  toEducacion(){
+    document.getElementById("educacion")?.scrollIntoView({behavior:'smooth'});
+  }
 }

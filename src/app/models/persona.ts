@@ -11,7 +11,7 @@ export interface Persona{
     ocupacion: string;
     email: string;
     telefono: number;
-    urlImagen: string;
+    urlImg: string;
     educacion: Array<Educacion>;
     experiencia: Array<Experiencia>;
     proyectos: Array<Proyectos>;

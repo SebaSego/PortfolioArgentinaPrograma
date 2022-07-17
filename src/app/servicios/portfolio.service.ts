@@ -16,7 +16,10 @@ export class PortfolioService {
   public getPersona():Observable<Persona>{
     return this.http.get<Persona>(`${this.apiServerUrl}/persona/ver/1`)
   }
-  obtenerDatos():Observable <any> {
+  public obtenerDatos():Observable <any> {
     return this.http.get('./assets/data/data.json');
-    }
+  }
+  public modificarDatos(persona:Persona):Observable<Persona>{
+    return this.http.put<Persona>(`${this.apiServerUrl}/persona/actualizar`,persona);
+  }
 }

@@ -9,6 +9,13 @@ import { Educacion } from '../../models/educacion';
 })
 export class EducacionServiceService {
   private apiServerUrl=environment.apiBaseUrl
+  public educacionCargada :Educacion[]= [{id:0,
+    titulo:"",
+    institucion:"",
+    anioInicio:"",
+    anioFin:"",
+    detalle:"",
+    urlImagen:""}];
 
 
   constructor(private http:HttpClient) { }

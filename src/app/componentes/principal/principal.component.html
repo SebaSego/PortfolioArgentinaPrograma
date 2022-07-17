@@ -11,39 +11,37 @@
           
           <div>
             <!--Foto de perfil-->
-            <img widht="200" [src]="miPortfolio.urlImagen" 
+            <img widht="200" [src]="miPortfolio.urlImg" 
             class="rounded-pill border border-2 position-relative top-0 start-50 translate-middle" height="200" alt="Foto personal">
 
-            <!--Boton para editar-->
-            <button type="button" class="btn">
-              <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
-                  <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
-                </svg>
-              </a>
-            </button>
           </div>
           
-          <div class="col-12 d-flex flex-column ">
+          <div class="col-12 d-flex flex-column text-center">
             <h3 class="card-title">{{miPortfolio.nombre}} {{miPortfolio.apellido}}</h3>
             <h6 class="card-text">{{miPortfolio.ocupacion}}</h6>
     
               
           </div>
             
-          <a href="#" class="btn btn-primary">Añadir Seccion</a>
+          <button *ngIf="autentic.logueado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#personaModal" (click)="editarPersona(miPortfolio)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+              <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+            </svg> Editar Informacion Personal
+          </button>
         </div>
       </div>
       
       <!--Derecha-->
-      <div class="col-12  col-md-6 text-center text-md end d-flex justify-content-center justify-content-md-end">
+      <div class="col-12  col-md-6 text-center d-flex justify-content-center justify-content-md">
         <div class="d-flex flex-column justify-content-evenly">
-          <!--
+         
+          
+          
           <span>
             <a href="#" class="text-decoration-none text-dark">
-              <img [src]="miPortfolio.educacion[1].urlImagen" 
-               style="max-width:50px" alt="Logo argentina programa">
-              <h6 >{{miPortfolio.educacion[1].institucion}}</h6>
+              <img [src]="listaEducacion[1].urlImagen" 
+               style="max-width:50px" alt="Logo Educacion">
+              <h6 >{{listaEducacion[1].institucion}}</h6>
             </a>
             
           </span>
@@ -51,14 +49,14 @@
           
         <span>
             <a href="#" class="text-decoration-none text-dark">
-              <img [src]="miPortfolio.educacion[0].urlImagen" 
-               style="max-width: 50px;" alt="">
-              <h6 >{{miPortfolio.educacion[0].institucion}}</h6>
+              <img [src]="listaEducacion[0].urlImagen" 
+               style="max-width: 50px;" alt="Logo Educacion">
+              <h6 >{{listaEducacion[0].institucion}}</h6>
             </a>
             
           </span>
-
-           -->
+         
+           
         </div>
 
       </div>
@@ -72,6 +70,55 @@
 
 </div>
  
-   
+<!-- Modal EDITAR Persona-->
+<div class="modal fade" id="personaModal" tabindex="-1" aria-labelledby="personaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h5 class="modal-title" id="personaModalLabel" >Editar Datos Personales</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <!--Cuerpo del modal con datos-->
+
+      <!--Formulario Agregar Educacion-->
+      <div class="modal-body">
+        <form [formGroup]="editPersona">
+          <div class="mb-3 form-group">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" formControlName="nombre">
+            
+          </div>
+          <div class="mb-3 form-group">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" formControlName="apellido"  class="form-control" id="apellido" placeholder="Ingrese apellido" >
+            
+          </div>
+          <div class="mb-3 form-group">
+            <label for="ocupacion" class="form-label">Ocupacion</label>
+            <input type="text" class="form-control" id="ocupacion" placeholder="Ocupacion" formControlName="ocupacion">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="telefono" placeholder="Telefono" formControlName="telefono">
+          </div>
+          <div class="mb-3 form-group">
+            <label for="urlImg" class="form-label">Url de imagen</label>
+            <input type="text" class="form-control" id="urlImg" placeholder="Cargar direccion de imagen o logo" formControlName="urlImg">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cerrar</button>
+        <button  type="button" class="btn btn-primary" (click)="modificarPersonaCargada()" >Editar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
    
