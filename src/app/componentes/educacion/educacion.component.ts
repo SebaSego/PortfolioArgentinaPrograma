@@ -36,6 +36,10 @@ export class EducacionComponent implements OnInit {
       });
     }
     
+    public cambiarEsNuevo(){
+      this.altaEducacion.reset();
+      this.esNuevo=true;
+    }
     /* Metodo para iniciar Formulario */
     public agregarEducacion(){
       this.altaEducacion=this.formBuilder.group({ 

@@ -4,7 +4,7 @@
       
       <!-- Button para Agregar Educacion -->
       <div class="text-center">
-        <button *ngIf="autentic.logueado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#educacionModal" >
+        <button *ngIf="autentic.logueado" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#educacionModal" (click)="cambiarEsNuevo()" >
           Agregar Educación
         </button>
       </div>

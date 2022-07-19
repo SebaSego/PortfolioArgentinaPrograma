@@ -1,11 +1,11 @@
 export interface Experiencia{
     id: number;
     puesto: string;
-    institucion: string;
-    anioInicio: string;
-    anioFin: string;
+    institucionExp: string;
+    anioInicioExp: string;
+    anioFinExp: string;
     ciudad: string;
-    detalle: string;
+    detalleExp: string;
     urlLogoEmpresa: string;
     
 }
