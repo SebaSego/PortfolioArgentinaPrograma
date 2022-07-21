@@ -60,8 +60,6 @@ export class EducacionComponent implements OnInit {
         this.mostrarEducacion();
         this.altaEducacion.reset();
         });
-      
-      
     }
     /*Metodo para Setear los valores del formulario con la entidad a modificar */
     public editarEducacion(educacion :Educacion){

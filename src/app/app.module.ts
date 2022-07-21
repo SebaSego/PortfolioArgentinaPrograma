@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './componentes/menu/login/login.component';
+import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 
 
 
@@ -22,7 +23,8 @@ import { LoginComponent } from './componentes/menu/login/login.component';
     EducacionComponent,
     ExperienciaComponent,
     PortfolioComponent,
-    LoginComponent
+    LoginComponent,
+    HabilidadesComponent
   ],
   imports: [
     BrowserModule,
