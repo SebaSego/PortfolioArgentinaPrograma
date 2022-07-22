@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:8080',
+  apiBaseUrl: 'https://still-shore-85129.herokuapp.com',
   firebase: {
     projectId: 'portfolio-argentina-prog-4d15d',
     appId: '1:681464959377:web:3f92608a13eecfff14ca30',

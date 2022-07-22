@@ -86,6 +86,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   public eliminarExperiencia(id: number){
+    
     this.experienciaService.borrarExperiencia(id).subscribe(
       data=>{
         this.mostrarExperiencia();
