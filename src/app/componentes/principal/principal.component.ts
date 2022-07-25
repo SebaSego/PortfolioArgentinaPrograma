@@ -35,7 +35,6 @@ export class PrincipalComponent implements OnInit {
   public mostrarPersona() {
     this.datosPortfolio.getPersona().subscribe(data =>{
       this.miPortfolio= data;
-      console.log(this.miPortfolio);
       
     });
   }
@@ -65,7 +64,7 @@ export class PrincipalComponent implements OnInit {
   public editarPersona(miPortfolio :Persona){
     
     this.editPersona.setValue({
-      id:miPortfolio.id,
+      id: miPortfolio.id,
       nombre: miPortfolio.nombre,
       apellido: miPortfolio.apellido,
       ocupacion: miPortfolio.ocupacion,
