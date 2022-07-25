@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  private apiServerUrl=environment.apiBaseUrl;
+  private apiServerUrl="https://still-shore-85129.herokuapp.com";
   logueado : boolean = false;
   
   constructor(private http:HttpClient) { }

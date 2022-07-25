@@ -8,7 +8,7 @@ import { Educacion } from '../../models/educacion';
   providedIn: 'root'
 })
 export class EducacionServiceService {
-  private apiServerUrl=environment.apiBaseUrl
+  private apiServerUrl="https://still-shore-85129.herokuapp.com";
   public educacionCargada :Educacion[]= [{id:0,
     titulo:"",
     institucion:"",

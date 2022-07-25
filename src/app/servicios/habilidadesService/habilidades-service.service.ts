@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class HabilidadesServiceService {
-  private apiServerUrl=environment.apiBaseUrl
+  private apiServerUrl="https://still-shore-85129.herokuapp.com";
 
   constructor(private http:HttpClient) { }
 

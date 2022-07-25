@@ -9,16 +9,14 @@ import { Persona } from '../models/persona';
   providedIn: 'root'
 })
 export class PortfolioService {
-  private apiServerUrl=environment.apiBaseUrl
+  private apiServerUrl="https://still-shore-85129.herokuapp.com";
 
   constructor(private http:HttpClient) { }
   
   public getPersona():Observable<Persona>{
-    return this.http.get<Persona>(`${this.apiServerUrl}/persona/ver/1`)
+    return this.http.get<Persona>(this.apiServerUrl + '/persona/ver/1')
   }
-  public obtenerDatos():Observable <any> {
-    return this.http.get('./assets/data/data.json');
-  }
+  
   public modificarDatos(persona:Persona):Observable<Persona>{
     return this.http.put<Persona>(`${this.apiServerUrl}/persona/actualizar`,persona);
   }
