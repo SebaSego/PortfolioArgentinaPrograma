@@ -1,23 +1,24 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-md navbar-fixed-top navbar-dark bg-dark">
     <div class="container-fluid" >
-    <!--Lado derecho Logo de Argentina Programa-->
+      
+      <!--Lado derecho Logo de Argentina Programa-->
       <img 
         src="https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1644786062/APLogo-20-20.png" 
         alt="Logo Argentina Programa"
         width="120"
       >
-      <div class="text-white">Argentina Programa - #YoProgramo.</div>
+      <div class="text-white d-none d-sm-block">Argentina Programa - #YoProgramo.</div>
       
       <div class="spacer"></div>
 
     <!--Lado Izquierdo accesos-->  
       <div class="justify-content-end">
         
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuLinks" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="menuLinks">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
           <!--Link de Inicio-->
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Inicio</a>
@@ -51,6 +52,7 @@
                 </svg>
               </a>
             </li>
+            
           <!--Boton para loguearse-->
             <li>
               <button *ngIf="!autentic.logueado" type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
@@ -88,4 +90,5 @@
     </div>
   </div>
 </div>
+
 <router-outlet></router-outlet>
