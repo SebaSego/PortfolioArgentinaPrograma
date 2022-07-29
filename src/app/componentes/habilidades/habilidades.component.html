@@ -1,6 +1,6 @@
 <div class="container ">
     <div class="text-center">
-        <h4>Habilidades</h4>
+        <h4>Tenologias</h4>
     </div>
 
   <div class="container shadow p-3 mb-5 bg-body rounded">
@@ -10,22 +10,24 @@
         Agregar Habilidad
       </button>
     </div>
-    <div class="container p-2">
-      <div class="row justify-content-evenly ">
-        
-        <div *ngFor="let habilidad of listaHabilidades" class="card col-4 mb-3 shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
-          <img [src]="habilidad.imagen" class="card-img-top  p-3" alt="Logo de habilidad">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let habilidad of listaHabilidades">
+        <div  class="card h-100">
+          <div>
+            <img [src]="habilidad.imagen" class="card-img-top p-5 img-fluid" alt="Logo de tecnologia">
+          </div>
           <div class="card-body">
-            <h5 class="card-title text-center">{{habilidad.nombreHabilidad}}</h5>
-            <p class="card-text">
-              {{habilidad.descripcion}} 
-            </p>
+            <h5 class="card-title">{{habilidad.nombreHabilidad}}</h5>
             <div class="progress">
               <div class="progress-bar progress-bar-striped  progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [style]="mostrarPorcentaje(habilidad.progreso)">
 
               </div>
             </div>
-
+            <p class="card-text">
+              {{habilidad.descripcion}} 
+            </p>
+            
             <div class="text-center">
               <!--Boton editar forma de Lapiz - Solo aparece si esta logueado-->
               <button *ngIf="autentic.logueado" type="button" class="btn col-1" data-bs-toggle="modal" data-bs-target="#habilidadModal" (click)="editarHabilidades(habilidad)">
@@ -44,13 +46,16 @@
                 
               </button>
             </div>
-          </div>  
+          </div>
         </div>
       </div>
-        
-        
       
-    </div>  
+    </div>
+
+
+
+
+    
     
     
   </div>
