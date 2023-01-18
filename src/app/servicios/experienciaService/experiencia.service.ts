@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  private apiServerUrl="https://still-shore-85129.herokuapp.com";
+  private apiServerUrl="https://backend-argentinaprograma-production-f9ce.up.railway.app";
 
   constructor(private http:HttpClient) { }
 

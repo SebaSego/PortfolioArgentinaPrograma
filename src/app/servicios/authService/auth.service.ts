@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  private apiServerUrl="https://still-shore-85129.herokuapp.com";
+  private apiServerUrl="https://backend-argentinaprograma-production-f9ce.up.railway.app";
   logueado : boolean = false;
   
   constructor(private http:HttpClient) { }

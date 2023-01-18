@@ -8,7 +8,7 @@ import { Educacion } from '../../models/educacion';
   providedIn: 'root'
 })
 export class EducacionServiceService {
-  private apiServerUrl="https://still-shore-85129.herokuapp.com";
+  private apiServerUrl="https://backend-argentinaprograma-production-f9ce.up.railway.app";
   public educacionCargada :Educacion[]= [{id:0,
     titulo:"",
     institucion:"",

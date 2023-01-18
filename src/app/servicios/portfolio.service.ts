@@ -9,7 +9,7 @@ import { Persona } from '../models/persona';
   providedIn: 'root'
 })
 export class PortfolioService {
-  private apiServerUrl="https://still-shore-85129.herokuapp.com";
+  private apiServerUrl="https://backend-argentinaprograma-production-f9ce.up.railway.app";
 
   constructor(private http:HttpClient) { }
   
